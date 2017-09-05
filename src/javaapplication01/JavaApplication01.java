@@ -18,10 +18,10 @@ public class JavaApplication01 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        ArrayList<Tuite> lista = new ArrayList();
         try {
             String endereco = "C:\\Users\\gabri\\Dropbox\\Downloads\\arquivos Trab ED 2 2017.3\\cargaMenor.txt", linha = null;
-            BufferedReader br = new BufferedReader(new FileReader(endereco));
-            ArrayList<Tuite> lista = new ArrayList();
+            BufferedReader br = new BufferedReader(new FileReader(endereco));    
             while((linha = br.readLine()) != null){
                 String[] cod = linha.split("	");
                 for(int i=0;i<cod.length;i++){
@@ -36,7 +36,9 @@ public class JavaApplication01 {
         } catch (IOException ioe) {
             ioe.printStackTrace();
         }
-        
+        for(int i = 0; i < lista.size(); i++){
+            System.out.println(lista.get(i).imprime());
+        }
         
     }
 }

@@ -78,7 +78,10 @@ public class Tuite {
         this.arq = arq;
     }
     
-    
+    public String imprime(){
+        String impressão = "ID User: " + getUserID() + "\nTT User: " + getTweetID() + "\nTT: " + getTweet() + "\nData: " + getDate() + "\n-------------------------------------------------------------------------------------------------------------------------";
+        return impressão;
+    }
             
             
 }
