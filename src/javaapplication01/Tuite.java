@@ -1,38 +1,38 @@
 
-package auxiliares;
+package javaapplication01;
 
 import java.io.File;
 
 
 public class Tuite {
 
-    private Integer userID;
-    private Integer tweetID;
+    private String userID;
+    private String tweetID;
     private String tweet;
     private String date;
     private File arq;
     
     
-    public Integer getUserID() {
+    public String getUserID() {
         return userID;
     }
 
     
-    public void setUserID(Integer userID) {
+    public void setUserID(String userID) {
         this.userID = userID;
     }
 
     /**
      * @return the tweetID
      */
-    public Integer getTweetID() {
+    public String getTweetID() {
         return tweetID;
     }
 
     /**
      * @param tweetID the tweetID to set
      */
-    public void setTweetID(Integer tweetID) {
+    public void setTweetID(String tweetID) {
         this.tweetID = tweetID;
     }
 

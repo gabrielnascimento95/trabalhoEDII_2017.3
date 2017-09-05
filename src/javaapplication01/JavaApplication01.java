@@ -5,6 +5,7 @@
  */
 package javaapplication01;
 import java.io.*; 
+import java.util.ArrayList;
 //import javax.swing.JOptionPane;
 
 /**
@@ -18,16 +19,18 @@ public class JavaApplication01 {
      */
     public static void main(String[] args) {
         try {
-            String endereco = "C:\\Users\\gabri\\Dropbox\\Downloads\\arquivos Trab ED 2 2017.3\\test_set_users.txt", linha = null;
+            String endereco = "C:\\Users\\gabri\\Dropbox\\Downloads\\arquivos Trab ED 2 2017.3\\cargaMenor.txt", linha = null;
             BufferedReader br = new BufferedReader(new FileReader(endereco));
+            ArrayList<Tuite> lista = new ArrayList();
             while((linha = br.readLine()) != null){
                 String[] cod = linha.split("	");
                 for(int i=0;i<cod.length;i++){
-                    if(i ==0){
-                        System.out.println(i);
-                        System.out.println(cod[i]);
-                        System.out.println("----------------------");
-                    }
+                    Tuite e = new Tuite();
+                    e.setUserID(cod[0]);
+                    e.setTweetID(cod[1]);
+                    e.setTweet(cod[2]);
+                    e.setDate(cod[3]);
+                    lista.add(e);
                 }
             }
         } catch (IOException ioe) {
