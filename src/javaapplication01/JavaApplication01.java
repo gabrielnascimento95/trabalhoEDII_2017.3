@@ -5,6 +5,7 @@
  */
 package javaapplication01;
 import java.io.*; 
+import java.math.BigInteger;
 import java.util.ArrayList;
 //import javax.swing.JOptionPane;
 
@@ -18,9 +19,11 @@ public class JavaApplication01 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ArrayList<Tuite> lista = new ArrayList();
+        ArrayList<Tuite> lista = new ArrayList<>();
+        ArrayList<BigInteger> id = new ArrayList<>();
+        
         try {
-            String endereco = "C:\\Users\\gabri\\Dropbox\\Downloads\\arquivos Trab ED 2 2017.3\\cargaMenor.txt", linha = null;
+            String endereco = "/home/12265041670/Downloads/cargaMenor.txt", linha = null;
             BufferedReader br = new BufferedReader(new FileReader(endereco));    
             while((linha = br.readLine()) != null){
                 String[] cod = linha.split("	");
@@ -38,6 +41,9 @@ public class JavaApplication01 {
         }
         for(int i = 0; i < lista.size(); i++){
             System.out.println(lista.get(i).imprime());
+            BigInteger aux = new BigInteger(lista.get(i).getTweetID());
+            id.add(aux);
+            System.out.println(id);
         }
         
     }
