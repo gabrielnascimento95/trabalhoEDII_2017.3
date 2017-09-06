@@ -5,32 +5,36 @@
  */
 package javaapplication01;
 
+import java.util.ArrayList;
+import javaapplication01.Associacao;
+
 /**
  *
  * @author 12265041670
  */
 public class Divisao {
-    int vet[];
+    ArrayList<Associacao> vet = new ArrayList<>();
 
-   public Divisao(int[] vet) {
+   public Divisao(ArrayList<Associacao> vet) {
        this.vet = vet;
 
    }
 
       public void troca(int ind1, int ind2) {
-       int aux = vet[ind1];
-       vet[ind1] = vet[ind2];
-       vet[ind2] = aux;
+       ArrayList<Associacao> aux = new ArrayList<>();
+       aux.add(vet.get(ind1));
+       vet.add(ind1, vet.get(ind2));
+       vet.add(ind2, aux.get(0));
    }
 
    public void quicksort(int esq, int dir, int procura) {
        if (dir < esq) {
-           if (procura - 1 < vet.length && esq == procura - 1) {
-               System.out.println(vet[procura - 1]);
+           if (procura - 1 < vet.size() && esq == procura - 1) {
+               System.out.println(vet.get(procura - 1));
            }
            return;
        } else {
-           int pivo = this.vet[dir];
+           Associacao pivo = this.vet.get(dir);
            int particao = this.particao(esq, dir, pivo, procura);
 
            quicksort(esq, particao - 1, procura);
@@ -40,7 +44,7 @@ public class Divisao {
 
    }
 
-   public int particao(int esq, int dir, double pivo, int procura) {
+   public int particao(int esq, int dir, ArrayList<Associacao> pivo, int procura) {
        int esqPtr = esq - 1;
        int dirPtr = dir;
        /*int k = 0;
@@ -51,7 +55,7 @@ public class Divisao {
        System.out.println('\n');*/
        while (true) {
            //System.out.println("Esquerda: " + esq + " Direita: " + dir);
-           while (vet[++esqPtr] < pivo);
+           while (vet.get(esqPtr++) < pivo.retornaValor(dir));
            //System.out.println("Esquerda: " + esq + " Direita: " + dir);
            while (dirPtr > esq && vet[--dirPtr] > pivo);
            //System.out.println("Esquerda: " + esq + " Direita: " + dir);
