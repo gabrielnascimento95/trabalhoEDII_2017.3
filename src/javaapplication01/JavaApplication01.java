@@ -39,12 +39,18 @@ public class JavaApplication01 {
         } catch (IOException ioe) {
             ioe.printStackTrace();
         }
+        
         for(int i = 0; i < lista.size(); i++){
             System.out.println(lista.get(i).imprime());
             BigInteger aux = new BigInteger(lista.get(i).getTweetID());
             id.add(aux);
+            Associacao associacao = new Associacao(id);
             System.out.println(id);
         }
+        
+        
+        //QuickSort qs =new QuickSort(id);
+                
         
     }
 }
