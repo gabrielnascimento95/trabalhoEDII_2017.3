@@ -13,7 +13,7 @@ import java.util.ArrayList;
  *
  * @author Gabriel_Nascimento
  */
-public class JavaApplication01 {
+public class Main {
 
     /**
      * @param args the command line arguments
