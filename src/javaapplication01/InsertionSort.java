@@ -14,8 +14,7 @@ public class InsertionSort {
    ArrayList<Associacao> lista = new ArrayList<>();
 
     public ArrayList<Associacao> InsertionSort(ArrayList<Associacao> list) {
-        Associacao aux;
-        
+        Associacao aux;     
         for(int i=0; i < list.size(); i++){
             for(int j = i; j>0; j--){
                if(list.get(j).equals(j-1)){

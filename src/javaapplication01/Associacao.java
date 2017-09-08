@@ -26,8 +26,5 @@ public class Associacao {
     public void setLista(ArrayList<BigInteger> lista) {
         this.lista = lista;
     }
-    
-    public BigInteger retornaValor(int index){
-        return this.lista.get(index);
-    }
+   
 }

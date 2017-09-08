@@ -55,9 +55,9 @@ public class Divisao {
        System.out.println('\n');*/
        while (true) {
            //System.out.println("Esquerda: " + esq + " Direita: " + dir);
-           while (vet.get(esqPtr++) < pivo.retornaValor(dir));
+           while (vet.get(esqPtr++). < pivo.get(dir)){
            //System.out.println("Esquerda: " + esq + " Direita: " + dir);
-           while (dirPtr > esq && vet[--dirPtr] > pivo);
+           while (dirPtr > esq && vet[--dirPtr] > pivo){
            //System.out.println("Esquerda: " + esq + " Direita: " + dir);
            if (esqPtr >= dirPtr) {
 
@@ -69,7 +69,8 @@ public class Divisao {
            //k++;
            //imprimirVetorDiv();
            //System.out.println('\n');
-
+            }
+           }
        }
        troca(esqPtr, dir);
 
