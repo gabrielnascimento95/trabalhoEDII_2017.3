@@ -5,6 +5,7 @@
  */
 package javaapplication01;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import javaapplication01.Associacao;
 
@@ -13,10 +14,10 @@ import javaapplication01.Associacao;
  * @author 12265041670
  */
 public class Divisao {
-    ArrayList<Associacao> vet = new ArrayList<>();
+    ArrayList<BigInteger> vet = new ArrayList<>();
 
-   public Divisao(ArrayList<Associacao> vet) {
-       this.vet = vet;
+   public Divisao(ArrayList<BigInteger> big) {
+       this.vet = big;
 
    }
 

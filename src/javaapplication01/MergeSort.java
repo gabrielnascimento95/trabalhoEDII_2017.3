@@ -7,12 +7,6 @@ package javaapplication01;
 
 public class MergeSort {
     
-    public static void main(String[] args) {
-        //Método Principal 
-        
-        
-    }
-
     public int [] mergeSort(int[] v,int[] w, int inicio, int fim) {
         if (inicio < fim) {
             int meio = (inicio + fim) / 2;

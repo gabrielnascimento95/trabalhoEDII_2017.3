@@ -44,7 +44,6 @@ public class Main {
             System.out.println(lista.get(i).imprime());
             BigInteger aux = new BigInteger(lista.get(i).getTweetID());
             id.add(aux);
-            Associacao associacao = new Associacao(id);
             System.out.println(id);
         }
         
