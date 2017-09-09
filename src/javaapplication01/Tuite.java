@@ -2,12 +2,13 @@
 package javaapplication01;
 
 import java.io.File;
+import java.math.BigInteger;
 
 
 public class Tuite {
 
     private String userID;
-    private String tweetID;
+    private BigInteger tweetID;
     private String tweet;
     private String date;
     private File arq;
@@ -25,7 +26,7 @@ public class Tuite {
     /**
      * @return the tweetID
      */
-    public String getTweetID() {
+    public BigInteger getTweetID() {
         return tweetID;
     }
 
@@ -33,7 +34,7 @@ public class Tuite {
      * @param tweetID the tweetID to set
      */
     public void setTweetID(String tweetID) {
-        this.tweetID = tweetID;
+        this.tweetID = new BigInteger(tweetID);
     }
 
     /**
