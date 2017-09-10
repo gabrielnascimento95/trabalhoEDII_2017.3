@@ -50,18 +50,14 @@ public class HeapSort {
         int dir = esq + 1;
 
         if (esq < tam) {
-            if (dir < tam) {
-                if (vetor.get(esq).getTweetID().equals(vetor.get(dir).getTweetID())) {
+                if (vetor.get(esq).getTweetID().compareTo(vetor.get(maior).getTweetID()) == 1) {
                     esq = dir;
                 }
-                if (vetor.get(esq).getTweetID().equals(vetor.get(maior).getTweetID())) {;
+        }if (dir < tam) {        
+                if (vetor.get(dir).getTweetID().compareTo(vetor.get(maior).getTweetID()) == 1) {;
                     troca(vetor, esq, maior);
                 }
-                
             }
-            
-
-        }
     }
 
     private void troca(ArrayList<Tuite> vet, int i, int j) {
