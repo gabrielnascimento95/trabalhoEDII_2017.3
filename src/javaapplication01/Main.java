@@ -24,7 +24,7 @@ public class Main {
         ArrayList<BigInteger> id = new ArrayList<>();
 
         try {
-            String endereco = "C:\\Users\\jpdia\\Documents\\trabalhoEDII_2017.3\\cargaMenor.txt", linha = null;
+            String endereco = "C:\\\\Users\\\\Rian Alves\\\\Desktop\\\\UFJF\\\\Estrutura de Dados II\\\\cargaMenor2.txt", linha = null;
             BufferedReader br = new BufferedReader(new FileReader(endereco));
             while ((linha = br.readLine()) != null) {
 
@@ -48,9 +48,11 @@ public class Main {
             System.out.println(id);
         }
 
-       // QuickSort qs = new QuickSort(lista);
-        InsertionSort is = new InsertionSort();
-        is.insertionSort(lista);
+        QuickSort qs = new QuickSort(lista);
+        //InsertionSort is = new InsertionSort();
+        //is.insertionSort(lista);
+        MergeSort ms = new MergeSort();
+       // ms.merge(lista);
 
     }
 }

@@ -2,6 +2,7 @@ package javaapplication01;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -9,48 +10,75 @@ import java.util.ArrayList;
  */
 public class HeapSort {
 
-   public HeapSort(ArrayList<BigInteger> lista) {
-        ArrayList<BigInteger> list = new ArrayList<>(lista);
-   }
-    
-   public ArrayList<BigInteger> constroiHeap(ArrayList<BigInteger> list)
-   {
-       int tam = list.size();
-       for(int i = tam/2 - 1; i >= 0; i--){
-           heapify(list, tam, i);
-       }
-       for(int i = tam -1; i >= 0; i--){
-           troca(list,0,i);
-           heapify(list, i, 0);
-       }
-       return list;
-   }
+    ArrayList<Tuite> list = new ArrayList<>();
 
-    private void heapify(ArrayList<BigInteger> vetor, int tam, int i) {
-        int maior = i;
-        int esq = 2*i + 1;
-        int dir = 2*i + 2;
+    public HeapSort(ArrayList<Tuite> lista) {
+        list.addAll(lista);
+        constroiHeap(lista);
+        int n = lista.size();
         
-        if(esq < tam){
-            if(vetor.get(esq).equals(vetor.get(maior)))
-            maior = esq;
+        for(int i = lista.size()-1; i> 0 ; i--)
+        {
+            Tuite aux = lista.get(i);
+            Tuite aux1 = lista.get(i);
+            Tuite teste = lista.get(0);
+            
+            aux = aux1;
+            aux1=teste;
+            teste = aux;
+            
+            heapify(lista, 0, --n);
+            
+         }
+         
+        imprimirVetorDiv(lista);
+    }
+
+    public void constroiHeap(ArrayList<Tuite> list) {
+
+        int tam = list.size();
+        for (int i = (tam -1) / 2; i >= 0; i--) {
+            heapify(list, tam, i);
         }
-        if(dir < tam){
-            if(vetor.get(dir).equals(vetor.get(maior)))
-            maior = dir;
-        }
-        if(maior != i){
-            troca(vetor, i, maior);
+        
+      
+    }
+
+    private void heapify(ArrayList<Tuite> vetor, int tam, int i) {
+        int maior = i;
+        int esq = 2 * i + 1;
+        int dir = esq + 1;
+
+        if (esq < tam) {
+            if (dir < tam) {
+                if (vetor.get(esq).getTweetID().equals(vetor.get(dir).getTweetID())) {
+                    esq = dir;
+                }
+                if (vetor.get(esq).getTweetID().equals(vetor.get(maior).getTweetID())) {;
+                    troca(vetor, esq, maior);
+                }
+                
+            }
+            
+
         }
     }
-    
-    private void troca(ArrayList<BigInteger> vet, int i, int j){
-        String n = String.valueOf(vet.get(i));
-        String n2 = String.valueOf(vet.get(j));
-        BigInteger aux = new BigInteger(n);
-        BigInteger aux2 = new BigInteger(n2);
-        vet.add(i, aux2);
-        vet.add(j, aux);
+
+    private void troca(ArrayList<Tuite> vet, int i, int j) {
+            
+        final List l = vet;
+        l.set(i, l.set(j, l.get(i)));
     }
-    
+
+    public void imprimirVetorDiv(ArrayList<Tuite>list) {
+        for (int r = 0; r < list.size(); r++) {
+            if (r < list.size() - 1) {
+                System.out.print(" " + list.get(r).getTweetID() + " ,");
+
+            } else {
+                System.out.print(" " + list.get(r).getTweetID() + " ");
+            }
+        }
+
+    }
 }
