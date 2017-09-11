@@ -8,6 +8,7 @@ package javaapplication01;
 import java.io.*;
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Date;
 //import javax.swing.JOptionPane;
 
 /**
@@ -19,7 +20,7 @@ public class Main {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         ArrayList<Tuite> lista = new ArrayList<>();
         ArrayList<BigInteger> id = new ArrayList<>();
 
@@ -47,12 +48,27 @@ public class Main {
             id.add(aux);
             System.out.println(id);
         }
-
+        
+        Long tempoInicial = System.currentTimeMillis();
+        Date data1 = new Date(tempoInicial);
         QuickSort qs = new QuickSort(lista);
         //InsertionSort is = new InsertionSort();
         //is.insertionSort(lista);
-        MergeSort ms = new MergeSort();
+        //MergeSort ms = new MergeSort();
        // ms.merge(lista);
+        Long tempoFinal = System.currentTimeMillis();
+        Date data2 = new Date(tempoFinal);
+        
+        FileWriter arq = new FileWriter("/home/gabriel/NetBeansProjects/trabalhoEDII_2017.3/saida250.txt");
+        PrintWriter gravarArq = new PrintWriter(arq);
+        gravarArq.printf("+------------QuickSort 25 elementos---------------------+");
+        gravarArq.printf("\n\nTempo inicial: " + data1 + "\n\n");
+        gravarArq.printf("\n\nResultado: " + qs + "\n\n");
+        gravarArq.printf("\n\nTempo Final: " + data2 + "\n\n");
+        gravarArq.printf("+---------------------------Fim------------------------+");
+        arq.close();
+        
+        
 
     }
 }
