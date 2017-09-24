@@ -10,5 +10,23 @@ package Parte2;
  * @author gabriel
  */
 public class Hash {
-    
+   private String chave;
+   private int valor;
+
+    public Hash(String chave, int valor) {
+        this.chave = chave;
+        this.valor = valor;
+    }
+
+    public String getChave() {
+        return chave;
+    }
+
+    public int getValor() {
+        return valor;
+    }
+
+
+   
+   
 }
