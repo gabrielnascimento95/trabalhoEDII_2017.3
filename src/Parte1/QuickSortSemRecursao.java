@@ -1,4 +1,4 @@
-package javaapplication01;
+package Parte1;
 
 public class QuickSortSemRecursao {
 
