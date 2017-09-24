@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication01;
+package Parte1;
 
 /**
  *
  * @author Gabriel_Nascimento
  */
-public class ReHashing {
+public class EncadeamentoCoalescido {
     
 }
