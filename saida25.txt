@@ -1,0 +1,13 @@
++------------QuickSort 25 elementos---------------------+
+
+Tempo inicial: Mon Sep 25 09:59:17 BRT 2017
+
+
+
+Resultado: 
+
+
+
+Tempo Final: Mon Sep 25 09:59:17 BRT 2017
+
++---------------------------Fim------------------------+
