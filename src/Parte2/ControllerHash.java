@@ -15,7 +15,7 @@ public class ControllerHash {
     private final static int TABELA_TAMANHO = 5000000; 
     Hash[] tabela;
 
-    ControllerHash() {
+    public ControllerHash() {
         tabela = new Hash[TABELA_TAMANHO];
         for(int i =0; i < TABELA_TAMANHO; i++){
             tabela[i] = null;

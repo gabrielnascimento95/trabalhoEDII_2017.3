@@ -8,6 +8,7 @@ package javaapplication01;
 import Parte1.QuickSort;
 import Parte1.Tuite;
 import Parte1.Validacao;
+import Parte2.ControllerHash;
 import java.io.*;
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -27,7 +28,9 @@ public class Main {
         ArrayList<Tuite> lista = new ArrayList<>();
         ArrayList<BigInteger> id = new ArrayList<>();
         Validacao validacao = new Validacao();
+        ControllerHash ct = new ControllerHash(); //cria obg controllerHAsh
         String linha = null;
+        
         try {
             String endereco = "C:\\Users\\gabri\\Dropbox\\Downloads\\arquivos Trab ED 2 2017.3\\cargaMenor.txt";
             BufferedReader br = new BufferedReader(new FileReader(endereco));
@@ -55,6 +58,8 @@ public class Main {
         for (int i = 0; i < lista.size(); i++) {
             System.out.println(lista.get(i).imprime());
             BigInteger aux = lista.get(i).getTweetID();
+            String aux2 = String.valueOf(aux);
+            ct.insere(aux2, i); //insere na tabela hash
             id.add(aux);
             System.out.println(id);
         }
